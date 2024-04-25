@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Learning to Stabilzie Faces">
+  <meta name="keywords" content="Learning to Stabilzie Faces">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Learning to Stabilize Faces">
+  <title>Learning to Stabilize Faces</title>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="./static/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src=".static/js/jquery.min.js"></script> <!--https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js-->
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<style>
+  .rotate_image {
+      -webkit-transform: rotate(270deg);
+      -moz-transform: rotate(270deg);
+      -ms-transform: rotate(270deg);
+      -o-transform: rotate(270deg);
+      transform: rotate(270deg);
+      margin: 100px 0 50px 0;
+  }
+  .videolabels {
+      display: flex;
+      font-size: 0.75rem !important;
+      font-weight: 600 !important;
+      margin-bottom: 0.2em;
+      text-align: center;
+      width: 100%;
+  }
+
+  .videolabels>p {
+      color: #7a7a7a !important;
+      flex-grow: 1.0
+  }
+</style>
+
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Learning to Stabilize Faces</h1> <br\>          
+          <div class="is-size-5 publication-authors">
+          	<span class="author-block"><a href="" target="_blank">Jan Bednarik</a>,</span>
+            <span class="author-block"><a href="" target="_blank">Erroll Wood</a>,</span>
+            <span class="author-block"><a href="" target="_blank">Vassilis Choutas</a>,</span>
+            <span class="author-block"><a href="" target="_blank">Timo Bolkart</a>,</span>            
+            <span class="author-block"><a href="https://scholar.google.com/citations?user=pe5XLTEAAAAJ&amp;hl=en" target="_blank">Daoye Wang</a>,</span>
+            <span class="author-block"><a href="" target="_blank">Chenglei Wu</a>,</span>
+            <span class="author-block"><a href="https://thabobeeler.com/" target="_blank">Thabo Beeler</a>,</span>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Google</span>              
+            </div>
+            <div class="is-size-5 publication-authors">
+            <br/>
+              <span class="author-block">Eurographics 2024</span>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+ </div>
+</section>
+
+         
+
+
+
+<div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://drive.google.com/file/d/11w3jT3L6F4969JMUKPZS192IxkfOkg6q/view?usp=sharing" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path></svg><!-- <i class="fas fa-file-pdf"></i> Font Awesome fontawesome.com -->
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://drive.google.com/file/d/1h952QQY9Gr-NOSueSvmpz8GSQnBRge6I/view?usp=sharing" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path></svg><!-- <i class="fas fa-file-pdf"></i> Font Awesome fontawesome.com -->
+                  </span>
+                  <span>Supplementary</span>
+                </a>
+              </span>
+              
+            </div>
+      
+          </div>
+
+
+
+<div class="column is-centered has-text-centered">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+      <div class="column">
+        <div class="item">
+		<img src="./static/images/teaser.png" alt="Italian Trulli" height="100%">
+        </div>
+      </div>
+    </div> 
+  </div>
+</div>
+</div>
+
+
+
+<!--h3 class="title is-4">|<a href="./static/images/teaser.png"> <b>Paper (pdf)</b></a>| <h3 -->
+
+            
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          Modern facial scanning produces high-quality meshes but often requires subsequent stabilization to remove rigid head movement. This is crucial for game or movie character development where deformation due to expressions need be isolated from global head motion. Manual stabilization is tedious, leading to automated attempts. However, existing methods are flawed, requiring manual input, being imprecise, slow, or needing temporally consistent data. We propose a new learning-based approach which is precise and fully automatic. We frame stabilization as regression, use a 3DMM for training data generation and predict rigid transforms stabilizing pairs of misaligned face meshes. Experiments confirm our method's effectiveness for both random expression sets and facial performances."
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<hr style="width:30%; margin: auto;" />
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="column is-centered has-text-centered">
+      <div class="content">
+        <h1 class="title is-3">High-level Method Overview</h1>
+      <div class="content has-text-justified">
+    The core idea of our approach is to exploit a 3D morphable model (3DMM) to generate a diverse dataset of misaligned facial expression pairs with known ground-truth (GT) rigid transformation, and train a ML model to regress the rigid alignment. As shown before [1], a high quality <i>synthetic</i> datset suffices for the model to naturally generalize to real-world samples.
+    We use a standard registration pipeline [2, 3] to produces a large dataset of registered facial meshes containing ~2,500 identities and ~38,000 expressions. An examples is shown below.
+
+    <div class="column is-centered has-text-centered">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+          <div class="column">
+            <div class="item">
+        <img src="./static/images/dataset.png" alt="dataset" width="75%" height="100%">
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+
+    </div>
+
+    <div class="content has-text-justified">
+    We use a custom 3DMM with the formulation similar to [1]. The 3DMM is used to sample identities, expressions and neck rotations. Specifically, we constract intra-subject pairs with the corresponding GT rigid transformation as a training dataset.
+
+    <div class="column is-centered has-text-centered">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+          <div class="column">
+            <div class="item">
+        <img src="./static/images/threedmm.png" alt="dataset" width="75%" height="100%">
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="content has-text-justified">
+    We devise a pre-processing scheme which simplifies the alignment task of the ML model. Specifically, we mask out the facial parts carrying no signal useful for the stabilization and pre-align the source to the target using Procrustes alignment.
+
+    <div class="column is-centered has-text-centered">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+          <div class="column">
+            <div class="item">
+        <img src="./static/images/preprocessing.png" alt="dataset" width="75%" height="100%">
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="content has-text-justified">
+    Finally, we trai a ML model, which takes the preprocesed pair of source and target facial meshes on the input and precdicts a corresponding rigid transformation, which aligns the source to the target, on the output.
+
+    <div class="column is-centered has-text-centered">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+          <div class="column">
+            <div class="item">
+        <img src="./static/images/mlmodel.png" alt="dataset" width="75%" height="100%">
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    </div>
+  </div>
+</section>
+
+<hr style="width:30%; margin: auto;" />
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="column is-centered has-text-centered">
+      <div class="content">
+        <h2 class="title is-3">Results</h2>
+
+        <div class="content has-text-justified">
+          Below are videos of stabilized facial performances and comparison to the SotA methods. The text highlights the typical failure modes of the comepeting methods. On the left of each video you can see the original frontal camera view from our multi-camera
+                    capture studio. Second to the left is our original unstabilized registered mesh and the remaining columns showcase the stabilized result produced by OUR and each of the compared method. 
+        </div>
+
+        <div class="columns">
+                <div class="column">
+                    <div class="videolabels">
+                        <p>Input video</p>
+                        <p>Original</p>
+                        <p>OUR</p>
+                        <p>CMAP</p>
+                        <p>UNPOSE</p>
+                        <p>PROCupper</p>
+                    </div>
+                    <video class="mb-3" width="100%" autoplay="" muted="" loop="" playsinline="">
+                        <source src="./static/videos/b1pXRkOn_I4et5nbhisClwn8xd0mcJ0a.mp4" type="video/mp4">
+                    </video>  
+                    <p class='is-size-7'>
+                    This performance contains small but abrupt head rotations along the frontal axis, i.e. side-to-side head tilting along the coronal plane. Note, especially when the subject turns their lips downs and tilts the head at the same time, the method UNPOSE introduces a spurious global motion where the chin appears to draw inwards to compensate for the neck rotation.
+                    </p>                  
+                </div>                
+            </div>
+
+        <div class="columns">
+                <div class="column">
+                    <div class="videolabels">
+                        <p>Input video</p>
+                        <p>Original</p>
+                        <p>OUR</p>
+                        <p>CMAP</p>
+                        <p>UNPOSE</p>
+                        <p>PROCupper</p>
+                    </div>
+                    <video class="mb-3" width="100%" autoplay="" muted="" loop="" playsinline="">
+                        <source src="./static/videos/DFw1w_smAAPmEHboFrWRDcdwzzUXaeng.mp4" type="video/mp4">
+                    </video>
+                    <p class='is-size-7'>
+                    The subject conitnuously moves and rotates their head as they are speaking, and this global motion is correctly undone by al the methods. However, note that when the subject blinks, the method CMAP subtly yet visibly rotates the head upwards which, when focusing on the texture, appears as if the subject raised their eyeborows or the forehead. However, it is evident from the input RGB video that no such motion happened in reality.
+                    </p>
+                </div>
+            </div>
+
+            <div class="columns">
+                <div class="column">
+                    <div class="videolabels">
+                        <p>Input video</p>
+                        <p>Original</p>
+                        <p>OUR</p>
+                        <p>CMAP</p>
+                        <p>UNPOSE</p>
+                        <p>PROCupper</p>
+                    </div>
+                    <video class="mb-3" width="100%" autoplay="" muted="" loop="" playsinline="">
+                        <source src="./static/videos/2WAJOnRqORfmzosGafGF6iYkFu4a4N9W.mp4" type="video/mp4">
+                    </video>
+                    <p class='is-size-7'>
+                    Over the course of the utterance, the subject mildly but continuously rotates and moves their head. The performance represents a neutral speech and there are no extreme expressions, thus there should not appear any strong motion of the ears. However, by focusing on the right ear of the stabilized sequences, one can notice that when compared to the other methods, UNPOSE manifests much more visible global motion.
+                    </p>
+                </div>                
+            </div>
+
+            <div class="columns">
+                <div class="column">
+                    <div class="videolabels">
+                        <p>Input video</p>
+                        <p>Original</p>
+                        <p>OUR</p>
+                        <p>CMAP</p>
+                        <p>UNPOSE</p>
+                        <p>PROCupper</p>
+                    </div>
+                    <video class="mb-3" width="100%" autoplay="" muted="" loop="" playsinline="">
+                        <source src="./static/videos/qers6OrfFLFMKv7Q_9tmQhxlKEqDqPBl.mp4" type="video/mp4">
+                    </video>
+                    <p class='is-size-7'>
+                    Over the course of the utterance, the subject is quite abruptly rotating and moving their head. Note that as the head tilts side-to-side along the coronal plane, the method UNPOSE wrongly compensates by a global head rotation. During the whole performance, when focusing on the forehead region and the occlusion boundary of the head scalp, one can notice subtle but continuous spurious global motion introduced by the method CMAP.
+                    </p>
+                </div>
+            </div>
+
+            <div class="columns">
+                <div class="column">
+                    <div class="videolabels">
+                        <p>Input video</p>
+                        <p>Original</p>
+                        <p>OUR</p>
+                        <p>CMAP</p>
+                        <p>UNPOSE</p>
+                        <p>PROCupper</p>
+                    </div>
+                    <video class="mb-3" width="100%" autoplay="" muted="" loop="" playsinline="">
+                        <source src="./static/videos/IPRBNqMf0JJhITKpbKWhm6W_myiZqXUn.mp4" type="video/mp4">
+                    </video>
+                    <p class='is-size-7'>
+                    The performance contains high-frequency low-anplitude global head motion. When focusing on the nose bridge area of the stabilized meshes, a small spurious leftover motion is visible in the UNPOSE method.
+                    </p>
+                </div>
+            </div>
+
+            <div class="columns">
+                <div class="column">
+                    <div class="videolabels">
+                        <p>Input video</p>
+                        <p>Original</p>
+                        <p>OUR</p>
+                        <p>CMAP</p>
+                        <p>UNPOSE</p>
+                        <p>PROCupper</p>
+                    </div>
+                    <video class="mb-3" width="100%" autoplay="" muted="" loop="" playsinline="">
+                        <source src="./static/videos/OsSK0w4eMHZX2UDxaBcNRnbaFr0E-95O.mp4" type="video/mp4">
+                    </video>
+                    <p class='is-size-7'>
+                    Similarly to the video above, the nose bridge area of the stabilized meshes reveals a subtle unwanted motion left by the method UNPOSE.
+                    </p>
+                </div>
+            </div>
+
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="column is-centered has-text-centered">
+      <div class="content">
+        <h2 class="title is-3 has-text-centered">Limitations</h2>
+        While our method operates on meshes only at test time, to train the method one needs a 3DMM which produces stable faces by design (in our case with the use of 3rd-party FACS-like blendshapes) and which is computed from a large and diverse dataset of registered meshes.
+      </div>
+    </div>
+</div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="column">
+      <div class="content">
+        <h2 class="title is-3">Citation</h2>
+      <pre class="citation content has-text-justified">
+      @proceedings{bednarik2024stabilization,          
+          author = {Jan Bednarik and Erroll Wood and Vassilis Choutas and Timo Bolkart and Daoye Wang and Chenglei Wu and Thabo Beeler},
+          title = {Learning to Stabilize Faces},
+          booktitle = {Eurographics 2024},          
+          year={2024}}</pre>
+      </div>
+    </div>
+</div>
+</section>
+
+
+<script>
+    // Add custom js here.
+</script>
+
+
+</body>
+</html>
